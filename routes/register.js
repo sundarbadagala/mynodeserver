@@ -20,7 +20,7 @@ router.post('/',bodyParser, async (req, res)=>{
         await newUser.save()
         return res.status(200).json('Success')
     } catch (error) {
-        return res.status(500).json('Internal Server Error value')
+        return res.status(500).json(error.message)
     }
 })
 

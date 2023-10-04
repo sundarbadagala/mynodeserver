@@ -51,6 +51,17 @@
 ```http
   GET /user/${username}
 ```
+#### Get user messages
+
+```http
+  GET /message
+```
+
+#### Get user messages by email
+
+```http
+  GET /message/${email}
+```
 
 #### Get all messages
 

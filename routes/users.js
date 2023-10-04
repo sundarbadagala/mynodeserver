@@ -11,7 +11,7 @@ router.get("/", middleware, async (req, res) => {
     if (!users) return res.status(400).json("No Data Found");
     return res.status(200).json(getUsers(users));
   } catch (error) {
-    return res.status(500).json("Server Error");
+    return res.status(500).json(error.message);
   }
 });
 

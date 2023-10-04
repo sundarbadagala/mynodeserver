@@ -10,7 +10,7 @@ router.get("/", middleware, async (req, res) => {
     if (!user) return res.status(400).json("User Not Found");
     return res.status(200).json(user);
   } catch (error) {
-    return res.status(500).json("Server Error");
+    return res.status(500).json(error.message);
   }
 });
 
@@ -26,7 +26,7 @@ router.put("/", middleware, async (req, res) => {
     await user.save();
     return res.status(200).json(user);
   } catch (error) {
-    return res.status(500).json("Server Error");
+    return res.status(500).json(error.message);
   }
 });
 
