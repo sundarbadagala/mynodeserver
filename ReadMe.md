@@ -1,6 +1,8 @@
 
 ## API Reference
 
+#### Base URl https://mynodeserver-x5tb.onrender.com/
+
 #### Post user registration
 ```http
   POST /register
