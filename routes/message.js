@@ -52,4 +52,24 @@ router.get("/all", middleware, async (req, res) => {
   }
 });
 
+router.delete("/", middleware, async (req, res) => {
+  try {
+    const { id } = req.query;
+    const message = await Message.findByIdAndDelete({ _id: id });
+    return res.status(200).json(message);
+  } catch (error) {
+    return res.status(500).json(error.message);
+  }
+});
+
+router.delete("/:id", middleware, async (req, res) => {
+  try {
+    const { id } = req.params;
+    const message = await Message.findByIdAndDelete({ _id: id });
+    return res.status(200).json(message);
+  } catch (error) {
+    return res.status(500).json(error.message);
+  }
+});
+
 module.exports = router;
