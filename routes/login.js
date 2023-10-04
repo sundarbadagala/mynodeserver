@@ -7,7 +7,6 @@ const router = express.Router();
 
 router.post('/', async (req, res)=>{
     try {
-        console.log(req)
         const {email, password} = req.body
         const user = await User.findOne({email})
         if(!user) return res.status(400).json('user not found')
@@ -22,7 +21,6 @@ router.post('/', async (req, res)=>{
             return res.json({token})
         })
     } catch (error) {
-        console.log('-->',error)
         return res.status(500).json('internal server error', error.message)
     }
 })

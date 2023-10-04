@@ -6,7 +6,6 @@ const router = express.Router()
 
 router.post('/',bodyParser, async (req, res)=>{
     try {
-        console.log('req.body', req.body);
         const {username, email, password, confirmpassword} = req.body
         if(!username && !email && !password && !confirmpassword) return res.status(402).json('data not found')
         const isEmailExist = await User.findOne({email})
